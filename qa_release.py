@@ -16,7 +16,7 @@ for n in tree.body:
     if isinstance(n,ast.Assign):
         for t in n.targets:
             if isinstance(t,ast.Name) and t.id=='VERSION': version=ast.literal_eval(n.value)
-if version!='V22.0 QA/PRODUCTION': raise SystemExit(f'Unexpected VERSION: {version}')
+if version!='V24.0 FAST DATA/PRODUCTION': raise SystemExit(f'Unexpected VERSION: {version}')
 for name in REQUIRED:
     if name.endswith('.py'): ast.parse((ROOT/name).read_text(encoding='utf-8'))
 env=os.environ.copy(); env['PYTHONDONTWRITEBYTECODE']='1'; env.pop('EGX_LIVE_SMOKE',None)
