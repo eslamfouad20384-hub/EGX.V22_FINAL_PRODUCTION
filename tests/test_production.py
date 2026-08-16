@@ -74,7 +74,7 @@ class Prod(unittest.TestCase):
 
     def test_universe_is_100_unique(self):
         src=P.read_text(encoding='utf-8')
-        self.assertIn("VERSION = 'V22.0 QA/PRODUCTION'",src)
+        self.assertIn("VERSION = 'V24.0 FAST DATA/PRODUCTION'",src)
         self.assertIn("SYMBOLS = list(dict.fromkeys",src)
         # Execute only the simple SYMBOLS assignment safely.
         tree=ast.parse(src); ns2={};
